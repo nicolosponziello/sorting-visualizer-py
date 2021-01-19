@@ -9,5 +9,5 @@ class Controller:
     def generateNewArray(self, size):
         self.model.generateRandomArray(size)
 
-    def sort(self):
-        self.model.sort()
+    def sort(self, method):
+        self.model.sort(method)

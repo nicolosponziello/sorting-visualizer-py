@@ -7,10 +7,9 @@ def main():
     v = view.View()
 
     c = controller.Controller(v, m)
-    v.init()
-    l = input()
+    v.init(c)
 
-    print(c.getRandomArray(int(l)))
+    v.show()
 
 if __name__ == '__main__':
     main()

@@ -16,7 +16,7 @@ class Model:
         if method == None:
             raise Exception('No sorting algorithm selected')
 
-        if method == Algorithms.INSERTION_SORT:
+        if Algorithms[method] == Algorithms.INSERTION_SORT:
             insertion_sort(self.current_array)
-        if method == Algorithms.MERGE_SORT:
+        if Algorithms[method] == Algorithms.MERGE_SORT:
             merge_sort(self.current_array, 0, len(self.current_array))

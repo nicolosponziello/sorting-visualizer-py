@@ -1,6 +1,4 @@
-class Algorithms():
+from enum import Enum
+class Algorithms(Enum):
     INSERTION_SORT = 0
-    QUICK_SORT = 1
-    HEAP_SORT = 2
-    MERGE_SORT = 3
-    BUBBLE_SORT = 4
+    MERGE_SORT = 1

@@ -2,14 +2,17 @@ from model import model
 from controller import controller
 from view import view
 
-def main():
-    m = model.Model()
-    v = view.View()
+class MainApplication():
+    def __init__(self):
+        self.model = model.Model()
+        self.view = view.View()
 
-    c = controller.Controller(v, m)
-    v.init(c)
+        self.controller = controller.Controller(self.view, self.model)
+        self.view.init(self.controller)
 
-    v.show()
+    def launch(self):
+        self.view.show()
 
 if __name__ == '__main__':
-    main()
+    app = MainApplication()
+    app.launch()

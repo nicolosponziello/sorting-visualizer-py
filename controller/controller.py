@@ -4,5 +4,4 @@ class Controller:
         self.model = model
     
     def getRandomArray(self, size):
-        print('controller getRandomArray')
         return self.model.getRandomArray(size)

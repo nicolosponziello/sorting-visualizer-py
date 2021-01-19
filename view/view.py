@@ -3,7 +3,6 @@ import tkinter as tk
 class View():
     def __init__(self):
         self.controller = None
-        pass
 
     def init(self, controller):
         self.root = tk.Tk()

@@ -3,5 +3,8 @@ class Controller:
         self.view = view
         self.model = model
     
-    def getRandomArray(self, size):
-        return self.model.getRandomArray(size)
+    def getArray(self):
+        return self.model.get_array()
+
+    def generateNewArray(self, size):
+        self.model.generateRandomArray(size)

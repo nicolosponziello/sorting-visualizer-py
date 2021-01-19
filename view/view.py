@@ -12,8 +12,10 @@ class View():
             raise Exception('controller cannot be none')
         self.controller = controller
     
-        b = tk.Button(self.root, text="test", command= lambda: print(self.controller.getRandomArray(10)))
+        b = tk.Button(self.root, text="current array", command= lambda: print(self.controller.getArray()))
         b.pack()
+        b2 = tk.Button(self.root, text="new", command=lambda: self.controller.generateNewArray(10))
+        b2.pack()
 
     def show(self):
         self.root.mainloop()

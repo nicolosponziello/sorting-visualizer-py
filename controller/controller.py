@@ -8,3 +8,6 @@ class Controller:
 
     def generateNewArray(self, size):
         self.model.generateRandomArray(size)
+
+    def sort(self):
+        self.model.sort()

@@ -23,6 +23,8 @@ class View():
         b2.pack()
         b3 = tk.Button(self.root, text="draw", command=lambda: self.draw_array(self.controller.getArray()))
         b3.pack()
+        b4 = tk.Button(self.root, text="sort", command=lambda: self.controller.sort())
+        b4.pack()
         self.canvas = tk.Canvas(self.root, width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
         self.canvas.pack()
 

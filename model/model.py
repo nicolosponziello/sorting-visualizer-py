@@ -9,3 +9,6 @@ class Model:
 
     def generateRandomArray(self, l, low=10, high=1000):
         self.current_array = [random.randint(low, high) for i in range(0, l)]
+    
+    def sort(self):
+        self.current_array.sort()

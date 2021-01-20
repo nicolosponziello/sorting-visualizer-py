@@ -2,8 +2,8 @@ from model import model
 from controller import controller
 from view import view
 
-WINDOW_HEIGHT = 800
-WINDOW_WIDTH = 1000
+WINDOW_HEIGHT = 1080
+WINDOW_WIDTH = 1920
 
 class MainApplication():
     def __init__(self):

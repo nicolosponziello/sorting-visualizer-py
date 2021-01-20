@@ -45,7 +45,7 @@ class View():
     def show(self):
         self.root.mainloop()
 
-    def draw_array(self, array):
+    def draw_array(self, array, colours=[]):
         #clear the canvas
         self.canvas.delete('all')
         #little offset in order to make some space at the beginning and the end of the rectangles
@@ -53,8 +53,12 @@ class View():
         #start x cordinate
         start_x = offset / 2
         rect_width = int((self.canvas_width - offset / 2) / len(array))
+        if len(colours) == 0:
+            colours = ['lightblue' for _ in range(len(array))]
+        idx = 0
         for el in array:
             #max height is relative to the max value
             height = int(self.canvas_height * (el / int(self.max_value_entry.get())))
-            self.canvas.create_rectangle(start_x, height, start_x + rect_width, self.canvas_height)
+            self.canvas.create_rectangle(start_x, height, start_x + rect_width, self.canvas_height, fill=colours[idx])
+            idx += 1
             start_x += rect_width

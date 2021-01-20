@@ -6,8 +6,16 @@ class Controller:
     def getArray(self):
         return self.model.get_array()
 
-    def generateNewArray(self, size):
-        self.model.generateRandomArray(size)
+    def generateNewArray(self, size, min, max):
+        try:
+            min = int(min)
+        except:
+            min = 10
+        try:
+            max = int(max)
+        except:
+            max = 100
+        self.model.generateRandomArray(size, min, max)
 
     def sort(self, method):
         self.model.sort(method)

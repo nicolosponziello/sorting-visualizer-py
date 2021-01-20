@@ -22,7 +22,7 @@ class View():
     
         b = tk.Button(self.root, text="current array", command= lambda: print(self.controller.getArray()))
         b.pack()
-        b2 = tk.Button(self.root, text="new", command=lambda: self.controller.generateNewArray(elem_selector.get()))
+        b2 = tk.Button(self.root, text="new", command=lambda: self.controller.generateNewArray(elem_num.get(), min_value.get(), max_value.get()))
         b2.pack()
         b3 = tk.Button(self.root, text="draw", command=lambda: self.draw_array(self.controller.getArray()))
         b3.pack()
@@ -31,8 +31,12 @@ class View():
         var = tk.StringVar(self.root)
         algo_select = tk.OptionMenu(self.root, var, *algo_options)
         algo_select.pack()
-        elem_selector = tk.Scale(self.root, from_=10, to=1000)
-        elem_selector.pack()
+        elem_num = tk.Scale(self.root, from_=10, to=1000)
+        elem_num.pack()
+        min_value = tk.Entry(self.root)
+        min_value.pack()
+        max_value = tk.Entry(self.root)
+        max_value.pack()
         self.canvas = tk.Canvas(self.root, width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
         self.canvas.pack()
 

@@ -9,8 +9,8 @@ class Model:
     def get_array(self):
         return self.current_array
 
-    def generateRandomArray(self, l, low=10, high=1000):
-        self.current_array = [random.randint(low, high) for i in range(0, l)]
+    def generateRandomArray(self, l, min=10, max=1000):
+        self.current_array = [random.randint(min, max) for i in range(0, l)]
     
     def sort(self, method):
         if method == None:

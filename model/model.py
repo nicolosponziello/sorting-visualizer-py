@@ -13,7 +13,7 @@ class Model:
         self.current_array = [random.randint(min, max) for i in range(0, l)]
     
     def sort(self, method):
-        if method == None:
+        if method == None or method == '':
             raise Exception('No sorting algorithm selected')
 
         if Algorithms[method] == Algorithms.INSERTION_SORT:

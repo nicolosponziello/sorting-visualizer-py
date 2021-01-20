@@ -12,11 +12,11 @@ class Model:
     def generateRandomArray(self, l, min=10, max=100):
         self.current_array = [random.randint(min, max) for i in range(0, l)]
     
-    def sort(self, method):
+    def sort(self, method, update_callback):
         if method == None or method == '':
             raise Exception('No sorting algorithm selected')
 
         if Algorithms[method] == Algorithms.INSERTION_SORT:
-            insertion_sort(self.current_array)
+            insertion_sort(self.current_array, update_callback)
         if Algorithms[method] == Algorithms.MERGE_SORT:
-            merge_sort(self.current_array, 0, len(self.current_array))
+            merge_sort(self.current_array, 0, len(self.current_array), update_callback)

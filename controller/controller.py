@@ -17,5 +17,8 @@ class Controller:
             max = 100
         self.model.generateRandomArray(size, min, max)
 
+    def update_view(self, array, colors):
+        self.view.draw_array(array, colors)
+
     def sort(self, method):
-        self.model.sort(method)
+        self.model.sort(method, self.update_view)

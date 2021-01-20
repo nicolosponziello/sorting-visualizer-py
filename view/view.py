@@ -20,7 +20,7 @@ class View():
     
         b = tk.Button(self.root, text="current array", command= lambda: print(self.controller.getArray()))
         b.pack()
-        b2 = tk.Button(self.root, text="new", command=lambda: self.controller.generateNewArray(elem_num.get(), min_value.get(), max_value.get()))
+        b2 = tk.Button(self.root, text="new", command=lambda: self.controller.generateNewArray(elem_num.get(), min_value_entry.get(), self.max_value_entry.get()))
         b2.pack()
         b3 = tk.Button(self.root, text="draw", command=lambda: self.draw_array(self.controller.getArray()))
         b3.pack()
@@ -31,10 +31,12 @@ class View():
         algo_select.pack()
         elem_num = tk.Scale(self.root, from_=10, to=1000)
         elem_num.pack()
-        min_value = tk.Entry(self.root)
-        min_value.pack()
-        max_value = tk.Entry(self.root)
-        max_value.pack()
+        min_value_entry = tk.Entry(self.root)
+        min_value_entry.pack()
+        self.max_value_entry = tk.Entry(self.root)
+        self.max_value_entry.pack()
+        min_value_entry.insert(tk.END, 10)
+        self.max_value_entry.insert(tk.END, 100)
         self.canvas = tk.Canvas(self.root, width=self.canvas_width, height=self.canvas_height)
         self.canvas.pack()
 
@@ -50,7 +52,7 @@ class View():
         start_x = offset / 2
         rect_width = int((self.canvas_width - offset / 2) / len(array))
         for el in array:
-            #max height is relative to the canvas size
-            height = int(self.canvas_height*el/1000)
+            #max height is relative to the max value
+            height = int(self.canvas_height * (el / int(self.max_value_entry.get())))
             self.canvas.create_rectangle(start_x, height, start_x + rect_width, self.canvas_height)
             start_x += rect_width

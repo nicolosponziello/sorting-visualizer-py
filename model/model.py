@@ -9,7 +9,7 @@ class Model:
     def get_array(self):
         return self.current_array
 
-    def generateRandomArray(self, l, min=10, max=1000):
+    def generateRandomArray(self, l, min=10, max=100):
         self.current_array = [random.randint(min, max) for i in range(0, l)]
     
     def sort(self, method):

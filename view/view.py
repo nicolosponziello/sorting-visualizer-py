@@ -1,21 +1,19 @@
 from algorithms import Algorithms
 import tkinter as tk
 
-WINDOW_HEIGHT = 800
-WINDOW_WIDTH = 1000
-CANVAS_WIDTH = WINDOW_WIDTH - 200
-CANVAS_HEIGHT = WINDOW_HEIGHT - 220
-
 algo_options = [el.name for el in Algorithms]
-
 class View():
-    def __init__(self):
+    def __init__(self, width, height):
         self.controller = None
+        self.width = width
+        self.height = height
+        self.canvas_width = width - 200
+        self.canvas_height = height - 220
 
     def init(self, controller):
         self.root = tk.Tk()
         self.root.title('Sorting Visualizer')
-        self.root.geometry(str(WINDOW_WIDTH) + 'x' + str(WINDOW_HEIGHT))
+        self.root.geometry(str(self.width) + 'x' + str(self.height))
         if controller == None:
             raise Exception('controller cannot be none')
         self.controller = controller
@@ -37,7 +35,7 @@ class View():
         min_value.pack()
         max_value = tk.Entry(self.root)
         max_value.pack()
-        self.canvas = tk.Canvas(self.root, width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
+        self.canvas = tk.Canvas(self.root, width=self.canvas_width, height=self.canvas_height)
         self.canvas.pack()
 
     def show(self):
@@ -50,9 +48,9 @@ class View():
         offset = 20
         #start x cordinate
         start_x = offset / 2
-        rect_width = int((CANVAS_WIDTH - offset / 2) / len(array))
+        rect_width = int((self.canvas_width - offset / 2) / len(array))
         for el in array:
             #max height is relative to the canvas size
-            height = int(CANVAS_HEIGHT*el/1000)
-            self.canvas.create_rectangle(start_x, height, start_x + rect_width, CANVAS_HEIGHT)
+            height = int(self.canvas_height*el/1000)
+            self.canvas.create_rectangle(start_x, height, start_x + rect_width, self.canvas_height)
             start_x += rect_width

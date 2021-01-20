@@ -27,6 +27,7 @@ class View():
         draw_button = tk.Button(self.frame, text="Draw", command=lambda: self.draw_array(self.controller.getArray()))
         draw_button.pack(side=tk.LEFT)
         algo = tk.StringVar(self.root)
+        algo.set(algo_options[0])
         sort_button = tk.Button(self.frame, text="Sort",command=lambda: self.controller.sort(algo.get()))
         sort_button.pack(side=tk.LEFT)
         algo_menu = tk.OptionMenu(self.frame, algo, *algo_options)

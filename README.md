@@ -17,5 +17,5 @@ This application is based on the architectural pattern MVC.
 
 ### TODO:
 [x] fix the alignment of the gui widgets (for now)
-[] add more algorithms
-[] add tests for algorithms
+[ ] add more algorithms
+[ ] add tests for algorithms

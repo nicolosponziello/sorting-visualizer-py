@@ -1,3 +1,4 @@
+from model.bubble_sort import bubble_sort
 from model.insertion_sort import insertion_sort
 from model.merge_sort import merge_sort
 from algorithms import Algorithms
@@ -24,3 +25,5 @@ class Model:
             insertion_sort(self.current_array, update_callback, delay)
         if Algorithms[method] == Algorithms.MERGE_SORT:
             merge_sort(self.current_array, update_callback, delay)
+        if Algorithms[method] == Algorithms.BUBBLE_SORT:
+            bubble_sort(self.current_array, update_callback, delay)

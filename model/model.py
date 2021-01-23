@@ -19,4 +19,4 @@ class Model:
         if Algorithms[method] == Algorithms.INSERTION_SORT:
             insertion_sort(self.current_array, update_callback)
         if Algorithms[method] == Algorithms.MERGE_SORT:
-            merge_sort(self.current_array, 0, len(self.current_array), update_callback)
+            merge_sort(self.current_array, update_callback)

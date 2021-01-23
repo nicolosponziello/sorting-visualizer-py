@@ -1,39 +1,43 @@
-def merge_sort(array, left_index, right_index):
-    if left_index >= right_index:
-        return
-    #find the middle point
-    middle = (left_index + right_index) // 2
-    #recursively sort first half
-    merge_sort(array, left_index, middle)
-    #recursively sort second half
-    merge_sort(array, middle + 1, right_index)
+import time
 
-    #merge the halves
-    merge(array, left_index, middle, right_index)
+def merge_sort(array, update_func, delay=0.01):
+    if len(array) > 1:
+        #find the middle point
+        middle = len(array) // 2
+        left = array[:middle]
+        right = array[middle:]
+        #recursively sort first half
+        merge_sort(left, update_func, delay)
+        #recursively sort second half
+        merge_sort(right, update_func, delay)
 
-def merge(array, left_index, middle, right_index):
-    left_array = array[left_index:middle+1]
-    right_array = array[middle+1:right_index+1]
+        #merge the halves
 
-    i = 0
-    k = 0
-    j = 0
+        i = 0
+        k = 0
+        j = 0
 
-    while i < len(left_array) and j < len(right_array):
-        if left_array[i] < right_array[j]:
-            array[k] = left_array[i]
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                array[k] = left[i]
+                i += 1
+            else:
+                array[k] = right[j]
+                j += 1
+            update_func(array, [])
+            time.sleep(delay)
+            k += 1
+
+        while i < len(left):
+            array[k] = left[i]
+            update_func(array, [])
+            time.sleep(delay)
             i += 1
-        else:
-            array[k] = right_array[j]
-            j += 1
-        k += 1
-
-    while i < len(left_array):
-        array[k] = left_array[i]
-        i += 1
-        k += 1
+            k += 1
     
-    while j < len(right_array):
-        array[k] = right_array[j]
-        j += 1
-        k += 1
+        while j < len(right):
+            array[k] = right[j]
+            update_func(array, [])
+            time.sleep(delay)
+            j += 1
+            k += 1

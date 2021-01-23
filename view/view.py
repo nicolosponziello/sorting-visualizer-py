@@ -36,7 +36,7 @@ class View():
         algo = tk.StringVar(self.root)
         algo.set(algo_options[0])
         
-        sort_button = tk.Button(self.input_frame, text="Sort",command=lambda: self.controller.sort(algo.get()))
+        sort_button = tk.Button(self.input_frame, text="Sort",command=lambda: self.controller.sort(algo.get(), speed_selector.get()))
         sort_button.pack(side=tk.LEFT)
         
         #menu
@@ -56,6 +56,11 @@ class View():
         max_value_label.pack(side=LEFT)
         self.max_value_entry = tk.Entry(self.input_frame)
         self.max_value_entry.pack(side=LEFT)
+
+        #speed
+        speed_selector = tk.Scale(self.input_frame, from_=0.1, to=1, orient=HORIZONTAL, label="Speed:", length=150, resolution=0.1)
+        speed_selector.pack(side=LEFT)
+
 
         min_value_entry.insert(tk.END, 10)
         self.max_value_entry.insert(tk.END, 100)

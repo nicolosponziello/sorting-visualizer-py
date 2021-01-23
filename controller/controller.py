@@ -20,5 +20,5 @@ class Controller:
     def update_view(self, array, colors):
         self.view.draw_array(array, colors)
 
-    def sort(self, method):
-        self.model.sort(method, self.update_view)
+    def sort(self, method, speed):
+        self.model.sort(method, self.update_view, speed)

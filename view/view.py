@@ -88,6 +88,7 @@ class View():
             #max height is relative to the max value
             height = int(self.canvas_height * (el / int(self.max_value_entry.get())))
             self.canvas.create_rectangle(start_x, height, start_x + rect_width, self.canvas_height, fill=colours[idx])
+            self.canvas.create_text((start_x + rect_width/2, height+20), text=str(el))
             idx += 1
             start_x += rect_width
         self.frame.update_idletasks()

@@ -30,7 +30,7 @@ class View():
         self.input_frame.pack()
     
         #buttons 
-        generate_button = tk.Button(self.input_frame, text="Generate", command=lambda: self.generateAndDraw(elem_num.get(), min_value_entry.get(), self.max_value_entry.get()))
+        generate_button = tk.Button(self.input_frame, text="Generate", command=lambda: self.generateAndDraw(elem_num.get(), self.min_value_entry.get(), self.max_value_entry.get()))
         generate_button.pack(side=tk.LEFT)
         
         algo = tk.StringVar(self.root)
@@ -49,8 +49,8 @@ class View():
        
         min_value_label = tk.Label(self.input_frame, text="Min Value:")
         min_value_label.pack(side=LEFT)
-        min_value_entry = tk.Entry(self.input_frame)
-        min_value_entry.pack(side=LEFT)
+        self.min_value_entry = tk.Entry(self.input_frame)
+        self.min_value_entry.pack(side=LEFT)
        
         max_value_label = tk.Label(self.input_frame, text="Max Value: ")
         max_value_label.pack(side=LEFT)
@@ -63,7 +63,7 @@ class View():
         speed_selector.pack(side=LEFT)
 
 
-        min_value_entry.insert(tk.END, 10)
+        self.min_value_entry.insert(tk.END, 10)
         self.max_value_entry.insert(tk.END, 100)
 
         #canvas
@@ -86,9 +86,9 @@ class View():
         idx = 0
         for el in array:
             #max height is relative to the max value
-            height = int(self.canvas_height * (el / int(self.max_value_entry.get())))
-            self.canvas.create_rectangle(start_x, height, start_x + rect_width, self.canvas_height, fill=colours[idx])
-            self.canvas.create_text((start_x + rect_width/2, height+20), text=str(el))
+            height = self.canvas_height * (el / int(self.max_value_entry.get()))
+            self.canvas.create_rectangle(start_x, self.canvas_height - height, start_x + rect_width, self.canvas_height, fill=colours[idx])
+            self.canvas.create_text((start_x + rect_width/2, self.canvas_height - height+20), text=str(el))
             idx += 1
             start_x += rect_width
         self.frame.update_idletasks()

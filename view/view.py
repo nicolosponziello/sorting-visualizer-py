@@ -84,4 +84,4 @@ class View():
             self.canvas.create_rectangle(start_x, height, start_x + rect_width, self.canvas_height, fill=colours[idx])
             idx += 1
             start_x += rect_width
-            self.frame.update_idletasks()
+        self.frame.update_idletasks()

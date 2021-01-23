@@ -11,9 +11,11 @@ This application is based on the architectural pattern MVC.
 ### Algorithms implemented:
 - Insertion Sort
 - Merge Sort
-- more to come
+- Bubble Sort
+- Quick Sort
+- More to come
 
 ### TODO:
-- fix the alignment of the gui widgets (just a prototype for now)
-- add more algorithms
-- add tests for algorithms
+[x] fix the alignment of the gui widgets (for now)
+[] add more algorithms
+[] add tests for algorithms

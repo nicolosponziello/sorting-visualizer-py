@@ -1,3 +1,4 @@
+from model.algorithms.selection_sort import selection_sort
 from model.algorithms.quick_sort import quicksort
 from model.algorithms.bubble_sort import bubble_sort
 from model.algorithms.insertion_sort import insertion_sort
@@ -30,3 +31,5 @@ class Model:
             bubble_sort(self.current_array, update_callback, delay)
         if Algorithms[method] == Algorithms.QUICK_SORT:
             quicksort(self.current_array, 0, len(self.current_array)-1, update_callback, delay)
+        if Algorithms[method] == Algorithms.SELECTION_SORT:
+            selection_sort(self.current_array, update_callback, delay)

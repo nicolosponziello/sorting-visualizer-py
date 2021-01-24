@@ -13,6 +13,9 @@ This application is based on the architectural pattern MVC.
 - Merge Sort
 - Bubble Sort
 - Quick Sort
+- Selection Sort
+- Heap Sort
+- Counting Sort
 - More to come
 
 ### TODO:

@@ -1,3 +1,4 @@
+from model.algorithms.counting_sort import counting_sort
 from model.algorithms.heap_sort import heap_sort
 from model.algorithms.selection_sort import selection_sort
 from model.algorithms.quick_sort import quicksort
@@ -36,3 +37,5 @@ class Model:
             selection_sort(self.current_array, update_callback, delay)
         if Algorithms[method] == Algorithms.HEAP_SORT:
             heap_sort(self.current_array, update_callback, delay)
+        if Algorithms[method] == Algorithms.COUNTING_SORT:
+            counting_sort(self.current_array, update_callback, delay)

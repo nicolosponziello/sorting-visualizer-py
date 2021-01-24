@@ -5,3 +5,4 @@ class Algorithms(Enum):
     BUBBLE_SORT = auto()
     QUICK_SORT = auto()
     SELECTION_SORT = auto()
+    HEAP_SORT = auto()

@@ -41,3 +41,4 @@ def merge_sort(array, update_func, delay=0.01):
             time.sleep(delay)
             j += 1
             k += 1
+        update_func(array, ['lightgreen' for _ in range(len(array))])

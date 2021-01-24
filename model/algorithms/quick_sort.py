@@ -24,3 +24,5 @@ def quicksort(array, low, high, update_func, delay):
         pivot = find_pivot(array, update_func, delay, low, high)
         quicksort(array, low, pivot-1, update_func, delay)
         quicksort(array, pivot + 1, high, update_func, delay)
+    else:
+        update_func(array, ['lightgreen' for _ in range(len(array))])

@@ -1,7 +1,7 @@
-from model.quick_sort import quicksort
-from model.bubble_sort import bubble_sort
-from model.insertion_sort import insertion_sort
-from model.merge_sort import merge_sort
+from model.algorithms.quick_sort import quicksort
+from model.algorithms.bubble_sort import bubble_sort
+from model.algorithms.insertion_sort import insertion_sort
+from model.algorithms.merge_sort import merge_sort
 from algorithms import Algorithms
 import random
 

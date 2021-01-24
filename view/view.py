@@ -8,8 +8,8 @@ class View():
         self.controller = None
         self.width = width
         self.height = height
-        self.canvas_width = width - 0.2 * width
-        self.canvas_height = height - 0.3 * height
+        self.canvas_width = width * 0.9
+        self.canvas_height = height * 0.8
 
     def generateAndDraw(self, size, min, max):
         self.controller.generateNewArray(size, min, max)
@@ -86,9 +86,9 @@ class View():
         idx = 0
         for el in array:
             #max height is relative to the max value
-            height = self.canvas_height * (el / int(self.max_value_entry.get()))
+            height = self.canvas_height * (el / int(self.max_value_entry.get())) - 5 
             self.canvas.create_rectangle(start_x, self.canvas_height - height, start_x + rect_width, self.canvas_height, fill=colours[idx])
-            self.canvas.create_text((start_x + rect_width/2, self.canvas_height - height+20), text=str(el))
+            self.canvas.create_text((start_x + rect_width/2, self.canvas_height - height+10), text=str(el))
             idx += 1
             start_x += rect_width
         self.frame.update_idletasks()

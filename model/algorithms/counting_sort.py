@@ -17,4 +17,5 @@ def counting_sort(array, update_func, delay):
             i += 1
             update_func(array, ['yellow' if _ == i else 'lightblue' for _ in range(len(array))])
             time.sleep(delay)
+    update_func(array, ['lightgreen' for _ in range(len(array))])
     

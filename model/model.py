@@ -5,6 +5,7 @@ from model.algorithms.quick_sort import quicksort
 from model.algorithms.bubble_sort import bubble_sort
 from model.algorithms.insertion_sort import insertion_sort
 from model.algorithms.merge_sort import merge_sort
+from model.algorithms.sleep_sort import sleep_sort
 from algorithms import Algorithms
 import random
 
@@ -39,3 +40,6 @@ class Model:
             heap_sort(self.current_array, update_callback, delay)
         if Algorithms[method] == Algorithms.COUNTING_SORT:
             counting_sort(self.current_array, update_callback, delay)
+        if Algorithms[method] == Algorithms.SLEEP_SORT:
+            sleep_sort(self.current_array, update_callback, delay)
+        

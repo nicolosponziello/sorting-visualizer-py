@@ -6,4 +6,5 @@ class Algorithms(Enum):
     QUICK_SORT = auto()
     SELECTION_SORT = auto()
     HEAP_SORT = auto()
-    COUNTING_SORT = auto()
+    COUNTING_SORT = auto(),
+    SLEEP_SORT = auto()

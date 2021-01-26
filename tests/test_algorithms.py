@@ -1,3 +1,4 @@
+import time
 import unittest
 import random
 from model.algorithms.insertion_sort import insertion_sort
@@ -7,6 +8,7 @@ from model.algorithms.heap_sort import heap_sort
 from model.algorithms.merge_sort import merge_sort
 from model.algorithms.quick_sort import quicksort
 from model.algorithms.selection_sort import selection_sort
+from model.algorithms.sleep_sort import sleep_sort
 
 def test_func(a, b):
     pass
@@ -60,4 +62,12 @@ class TestAlgorithms(unittest.TestCase):
         sorted_arr = sorted(array)
         self.assertNotEqual(array, sorted_arr)
         selection_sort(array, test_func, 0)
+        self.assertEqual(sorted_arr, array)
+
+    def test_sleep_sort(self):
+        array = [random.randint(10, 100) for _ in range(10)]
+        sorted_arr = sorted(array)
+        self.assertNotEqual(array, sorted_arr)
+        sleep_sort(array, test_func, 0)
+        time.sleep(1)
         self.assertEqual(sorted_arr, array)

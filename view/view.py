@@ -58,8 +58,8 @@ class View():
         self.max_value_entry.pack(side=LEFT)
 
         #speed
-        speed_selector = tk.Scale(self.input_frame, from_=0.1, to=1, orient=HORIZONTAL, label="Speed:", length=150, resolution=0.1)
-        speed_selector.set(0.5)
+        speed_selector = tk.Scale(self.input_frame, from_=0.1, to=2, orient=HORIZONTAL, label="Speed:", length=150, resolution=0.1)
+        speed_selector.set(1)
         speed_selector.pack(side=LEFT)
 
 

@@ -1,6 +1,7 @@
 # Sorting Visualizer
 
 ## Sorting algorithms visualizer made with Python and tkinter
+![image](imgs/sorting-visualizer.png)
 
 This application is based on the architectural pattern MVC.
 
